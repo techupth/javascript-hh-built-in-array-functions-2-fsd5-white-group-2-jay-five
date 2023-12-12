@@ -374,3 +374,9 @@ const bills = [
 ];
 
 // Start coding here
+
+const totalAmount = bills.reduce((accumulator, currenValue) => {
+  return accumulator + currenValue.total;
+}, 0);
+
+console.log(`Total bill transaction is ${totalAmount.toLocaleString()}`);
