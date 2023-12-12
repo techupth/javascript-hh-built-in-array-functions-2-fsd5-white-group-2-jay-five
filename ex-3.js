@@ -374,4 +374,13 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+const billMembers = bills
+  .filter((item) => {
+    return item.member != null;
+  })
+  .reduce((accumulator, currenValue) => {
+    accumulator.push(currenValue.member.name);
+    return accumulator;
+  }, []);
+
+console.log(billMembers);
