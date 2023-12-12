@@ -374,4 +374,28 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+function fineMembers(bills) {
+  return bills
+    .filter((bill) => bill.member !== null)
+    .map((bill) => bill.member.name)
+    .reduce((accumulator, currentValue) => {
+      if (!accumulator.includes(currentValue)) {
+        accumulator.push(currentValue);
+      }
+      return accumulator;
+    }, []);
+}
+const nameMembers = fineMembers(bills);
+console.log(nameMembers.length);
+// function finceTotalMember(member) {
+//   let ex = [];
+//   for (let i = 0; i < member.length; i++) {
+//     if (!ex.includes(member[i])) {
+//       ex.push(member[i]);
+//     }
+//   }
+//   return ex;
+// }
+
+// const totalMembers = finceTotalMember(nameMembers);
+// console.log(totalMembers.length);

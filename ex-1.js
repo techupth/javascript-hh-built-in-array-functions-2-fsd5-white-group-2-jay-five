@@ -374,3 +374,23 @@ const bills = [
 ];
 
 // Start coding here
+// วิธีfor loop
+// function calculateTotal(item) {
+//   let totalCal = 0;
+//   for (let i = 0; i < item.length; i++) {
+//     totalCal = item[i].total + totalCal;
+//     console.log(totalCal);
+//   }
+//   return totalCal;
+// }
+// let totalAmount = calculateTotal(bills);
+// console.log(`Total bill transaction is ${totalAmount.toLocaleString()}`);
+// ทำbuild in function
+function calculateTotal2(item) {
+  return item.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.total,
+    0
+  );
+}
+let totalAmount2 = calculateTotal2(bills);
+console.log(`Total bill transaction is ${totalAmount2.toLocaleString()}`);
